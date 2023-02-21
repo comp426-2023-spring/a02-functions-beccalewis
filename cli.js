@@ -44,7 +44,7 @@ if (args.e) {
 	process.exit(0);
 }
 
-const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&timezone=" + timezone + "&daily=precipitation_hours");
+const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&daily=precipitation_hours + "&timezone=" + timezone);
 const data = await response.json();
 
 let days = args.d;
@@ -52,7 +52,7 @@ let days = args.d;
 if (days == 0) {
 	console.log(data.precipitation_hours[0] + " " + "today.");
 } else if (days == 1) {
-	console.log(data.precipitation_hours[days] + " " + "tomorrow.");
+	console.log(data.precipitation_hours[1] + " " + "tomorrow.");
 } else if (days > 1) {
 	console.log (data.precipitation_hours[days] + " " + "in " + days + " days.");
 }
