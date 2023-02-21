@@ -1,0 +1,21 @@
+{
+  "name": "galosh.sh",
+  "version": "1.0.0",
+  "description": "do i need my galoshes app",
+  "main": "index.js",
+  "scripts": {
+    "test": "node cli.js -n 35.92 -w 79.05 -z America/New_York"
+  },
+  "author": "@beccalewis",
+  "license": "AGPL-3.0-or-later",
+  "type": "module",
+  "bin": {
+	"galosh.js": "./cli.js"
+},
+  "dependencies": {
+    "minimist": "^1.2.8",
+    "moment-timezone": "^0.5.40",
+    "node-fetch": "^3.3.0"
+  }
+
+}
