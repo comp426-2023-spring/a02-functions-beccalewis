@@ -44,7 +44,7 @@ if (args.e) {
 	process.exit(0);
 }
 
-const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&daily=precipitation_hours + "&timezone=" + timezone);
+const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&timezone=" + timezone+ "&daily=precipitation_hours");
 const data = await response.json();
 
 let days = args.d;
