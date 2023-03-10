@@ -1,11 +1,9 @@
 #!/usr/bin/env node
-
 import minimist from "minimist";
 import fetch from "node-fetch";
 import moment from "moment-timezone";
 
 const args = minimist(process.argv.slice(2));
-
 if (args.h) {
 	console.log("Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE");
 	console.log("\n");
@@ -52,8 +50,11 @@ const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" 
 const data = await response.json();
 console.log(data)
 
-let days = args.d;
-
+if (args.d) {
+	let days = args.d;
+} else {
+let days = 1;
+}
 if (days == 0) {
 	console.log(data.daily.precipitation_hours[0] + " " + "today.");
 } else if (days == 1) {
