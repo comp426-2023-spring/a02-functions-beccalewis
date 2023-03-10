@@ -59,7 +59,7 @@ if (days == 0) {
 } else if (days == 1) {
 	console.log(data.daily.precipitation_hours[1] + " " + "tomorrow.");
 } else if (days > 1) {
-	console.log (data.precipitation_hours[days] + " " + "in " + days + " days.");
+	console.log (data.daily.precipitation_hours[days] + " " + "in " + days + " days.");
 }
 
 if (args.j) {
