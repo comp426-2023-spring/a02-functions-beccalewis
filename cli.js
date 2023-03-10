@@ -22,15 +22,11 @@ let latitude;
 let timezone;
 
 
-
 if (args.z) {
-	const timezone = args.z;
+	timezone = args.z;
 } else {
-	const timezone = moment.tz.guess();
+	timezone = moment.tz.guess();
 }	
-console.log(timezone);
-
-
 
 
 
