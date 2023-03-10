@@ -49,12 +49,15 @@ if (args.e) {
 const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&timezone=" + timezone+ "&daily=precipitation_hours");
 const data = await response.json();
 console.log(data)
-
+let days
 if (args.d) {
-	let days = args.d;
+	days = args.d;
+} else if (args.d == 0) {
+	days = 0;
 } else {
-let days = 1;
+	days = 1;
 }
+
 if (days == 0) {
 	console.log(data.daily.precipitation_hours[0] + " " + "today.");
 } else if (days == 1) {
